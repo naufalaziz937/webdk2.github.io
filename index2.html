@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="Asset 1.png">
+    <title>Document</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <style>
+        /* Add your custom CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-top: 200px;
+            margin-bottom: 200px;
+        }
+        h1 {
+            text-align: center;
+            color: #183d3d;
+        }
+        label {
+            margin-bottom: 10px;
+        }
+        input {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #183d3d;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .ticket {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+    </style>
+    <!-- navbar -->
+    <nav>
+        <div class="wrapper">
+            <div class="logo"><a href=" ">Lembang Park Zoo</a></div>
+            <div class="menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#aboutme">About</a></li>
+                    <li><a href="#info">Info</a></li>
+                    <li><a href="#lokasi">Lokasi</a></li>
+                    <li><a href="#contact" class="tbl-biru">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- isi -->
+<div class="container">
+    <h1>Lembang Park Zoo Ticket</h1>
+    <h1>Weekdays</h1>
+    <div id="form-container">
+            <label for="nama">Nama:</label>
+            <input type="text" id="nama" placeholder="Masukkan nama Anda" required>
+            <label for="jumlah_tiket">Jumlah Tiket:</label>
+            <input type="number" id="jumlah_tiket" placeholder="Jumlah tiket yang ingin dibeli" required>
+            <button onclick="beliTiket()">Beli Tiket</button>
+    </div>
+    <div class="ticket" id="ticket"></div>
+</div>
+
+    <div class="container">
+        <h1>Lembang Park Zoo Ticket</h1>
+        <h1>Weekend</h1>
+        <div id="form-container">
+            <label for="nama2">Nama:</label>
+            <input type="text" id="nama2" placeholder="Masukkan nama Anda" required>
+            <label for="jumlahTiket2">Jumlah Tiket:</label>
+            <input type="number" id="jumlahTiket2" placeholder="Jumlah tiket yang ingin dibeli" required>
+            <button onclick="beliTiket2()">Beli Tiket</button>
+        </div>
+        <div class="ticket" id="ticket2"></div>
+    </div>
+
+
+    <!-- footer -->
+    <footer class="footer2">
+        <div class="container2">
+            <div class="row2">
+                <div class="footer-col2">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#aboutme">About</a></li>
+                        <li><a href="#info">Info</a></li>
+                        <li><a href="#lokasi">Lokasi</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col2">
+                    <h4>Contact</h4>
+                    <div class="sosial-links">
+                        
+                            <a href="https://wa.me/6281313498626"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="mailto:lembangparkzoo@gmail.com"><i class="fa-regular fa-envelope"></i></a>
+                            <a href="tel:022 27614091"><i class="fa-solid fa-phone"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col2">
+                    <h4>Lokasi</h4>
+                    <p class="teks">Jl. Kolonel Masturi No.171, Sukajaya, Kec. Lembang, Kabupaten Bandung Barat, Jawa Barat 40391</p>
+                </div>
+                <div class="footer-col2">
+                    <h4>Jam operasional</h4>
+                    <p class="teks">Senin-Jumat</p>
+                    <p class="teks">09.00 - 17.00 WIB</p>
+                    <p class="teks">Sabtu - Minggu, Tanggal Merah</p>
+                    <p class="teks">08.00 - 18.00 WIB</p>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="wrapper">
+                &copy; 2024. <b>NazwanNaufalAziz.</b> All Right Reversed.
+            </div>
+        </div>
+    </footer>
+</body>
+<script>
+    function beliTiket() {
+            const nama = document.getElementById('nama').value;
+            const jumlahTiket = parseInt(document.getElementById('jumlah_tiket').value);
+            const hargaPerTiket = 50000; // Harga per tiket (misalnya)
+            const totalHarga = jumlahTiket * hargaPerTiket;
+
+            // Generate random ticket number (e.g., 123456)
+            const nomorSeri = Math.floor(Math.random() * 900000) + 100000;
+
+            // Display ticket details
+            const ticketElement = document.getElementById('ticket');
+            ticketElement.innerHTML = `
+                <h2>Tiket Anda</h2>
+                <p>Nama: ${nama}</p>
+                <p>Jumlah Tiket: ${jumlahTiket}</p>
+                <p>Total Harga: Rp.${totalHarga}</p>
+                <p>Nomor Seri Tiket: ${nomorSeri}</p>
+            `;
+        }
+
+        function beliTiket2() {
+            const nama2 = document.getElementById('nama2').value;
+            const jumlahTiket2 = parseInt(document.getElementById('jumlahTiket2').value);
+            const hargaPerTiket2 = 70000; // Harga per tiket (misalnya)
+            const totalHarga2 = jumlahTiket2 * hargaPerTiket2;
+
+            // Generate random ticket number (e.g., 123456)
+            const nomorSeri2 = Math.floor(Math.random() * 900000) + 100000;
+
+            // Display ticket details
+            const ticketElement = document.getElementById('ticket2');
+            ticketElement.innerHTML = `
+                <h2>Tiket Anda</h2>
+                <p>Nama: ${nama2}</p>
+                <p>Jumlah Tiket: ${jumlahTiket2}</p>
+                <p>Total Harga: Rp.${totalHarga2}</p>
+                <p>Nomor Seri Tiket: ${nomorSeri2}</p>
+            `;
+        }
+</script>
+</html>
